@@ -5,19 +5,23 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
-
+const int max_array_size = 10;
 int main()
 {
-	int age[] = { 22,56,73,98,150,3,43,29,38,85 }; //This is an array of integers, the integers represent someones age. 
-
-	for () //Need to do the calculations for every age in the array, so need to loop round it
+	int age[max_array_size] = { 22,56,73,98,150,3,43,29,38,85 };
+	int days, weeks, months, temp;
+	for (int idx = 0; idx < max_array_size; idx++)
 	{
-		something = age[i]; // age[i] is referencing the "ith" element of the array, i could be 0,1,2,3,4,5 etc... 
-		//but cannot be a number reprsenting an element which is not in the array, so i couldnt equal 10 or above.
-
-		//calculations for days, weeks, months
-		//Store them, write to screen, do whatever.
+		temp = age[idx];
+		if (temp >= 100)
+			temp = temp / 2;
+		days = temp * 365;
+		months = temp * 12;
+		weeks = days / 7;
+		std::cout << "You are: " << temp << " Years " << months << " months " << weeks << " weeks " << days << " days old." << std::endl;
 	}
+	char c;
+	std::cin >> c;
     return 0;
 }
 
