@@ -9,15 +9,27 @@
 int main()
 {
 	// Step 1: create variables to store the details
-	// Step 2: Use cout to display message to screen
-	// Step 3: Use cin to put user input into variables created
-	// Step 4: Check the variables to see if they are valid
-	if (age > 150) // (name.length > 20) etc... 
-	{
-		//Do something!.
-	}
-	// Step 5 bonus: Set up the program so that it continues to ask them if the details are invalid. 
+	int age;
+	double height;
+	char name[20];
+	bool likesMusic;
+	bool active = true;
+	bool valid = false;
 
+	while (active) {
+		while (!valid)
+		{
+			std::cout << "Please enter your age: " << std::endl;
+			std::cin >> age;
+			if ((age < 0) || (age > 120))
+				std::cerr << "The information you have entered is invalid" << std::endl;
+			else
+				valid = true;
+		}
+		std::cout << "Please enter your name: " << std::endl;
+		std::cin >> name;
+		// Step 5 bonus: Set up the program so that it continues to ask them if the details are invalid. 
+	}
     return 0;
 }
 
