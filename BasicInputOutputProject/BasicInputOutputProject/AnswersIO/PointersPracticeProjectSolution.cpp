@@ -1,6 +1,6 @@
 // PointersPracticeProject.cpp : Defines the entry point for the console application.
 // <Summary> Create an application that lets the user fill an array with integers. Then create a function which accepts two integer pointers and swaps them around, then reads them out. </summary>
-
+//
 #include "stdafx.h"
 #include <iostream>
 #include <string>

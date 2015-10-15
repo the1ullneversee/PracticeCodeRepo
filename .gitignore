@@ -155,9 +155,9 @@ $RECYCLE.BIN/
 # Mac desktop service store files
 .DS_Store
 #Answers for the projects only should be taken out when completion of task.
-.AnswersPtr
-.AnswersIO
-.AnswersCS
-.AnswersFunc2
-.AnswersLogic
-.AnswersVarOp
+#AnswersPtr/*.cpp
+#AnswersIO/*.cpp
+#AnswersCS/*.cpp
+#AnswersFunc2/*.cpp
+#AnswersLogic/*.cpp
+#AnswersVarOp/*.cpp
