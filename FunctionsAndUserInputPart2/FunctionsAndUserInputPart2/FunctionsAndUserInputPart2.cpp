@@ -13,9 +13,64 @@ void printValues(std::string name, std::size_t age);
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	//CAll functions in here
-	//>> needs something infront of function call >>  getName();
-
+	std::string name,choice;
+	std::size_t age;
+	bool more = true;
+	while (more)
+	{
+		name = getName();
+		age = getAge();
+		printValues(name, age);
+		std::cout << "Do you want to enter more? y/n" << std::endl;
+		std::cin >> choice;
+		if (choice == "n")
+		{
+			more = false;
+		}
+	}
 	return 0;
 }
 //Do the functionality for the functions here.
+std::string getName()
+{
+	std::string nameTemp;
+	bool active = true;
+	while (active)
+	{
+		std::cout << "Enter your name: " << std::endl;
+		std::cin >> nameTemp;
+		if (nameTemp.size() > 30 || nameTemp.size() == 0)
+		{
+			std::cerr << "Invalid data, try again" << std::endl;
+		}
+		else
+		{
+			active = false;
+		}
+	}
+	return nameTemp;
+}
+std::size_t getAge()
+{
+	std::size_t ageTemp;
+	bool active = true;
+	while (active)
+	{
+
+		std::cout << "Enter your age: " << std::endl;
+		std::cin >> ageTemp;
+		if (ageTemp > 120 || ageTemp == 0 || ageTemp < 0)
+		{
+			std::cerr << "Invalid data, try again" << std::endl;
+		}
+		else
+		{
+			active = false;
+		}
+	}
+	return ageTemp;
+}
+void printValues(std::string name, std::size_t age)
+{
+	std::cout << "Your name is: " << name << "Your age is: " << age << std::endl;
+}
