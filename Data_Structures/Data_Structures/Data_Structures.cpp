@@ -1,7 +1,8 @@
 // Data_Structures.cpp : Defines the entry point for the console application.
 // ************************************************************************************************************//
-//<summary> Create an application which creates a data structure called Person with at least 5 different members
-// And fills these different memebers with user input, and displays it back to screen </summary>
+//<summary> Create a program which will use data structures to hold a persons purchase information when visiting
+// A supermarket and displays what they have bought and what the store names was, their name, etc...
+//Two different data structures are needed, one for the person, and one for the store. </summary>
 // ***********************************************************************************************************//
 #include "stdafx.h"
 #include <stdio.h>
@@ -33,17 +34,17 @@ int main()
 	customer.itemsBought = elements;
 	for (i = 0; i < elements; i++)
 	{
-		std::cout << "Please enter your first item: ";
+		std::cout << "Please enter item " << i << " ";
 		std::cin >> customer._purchaseList[i];
 		std::cout << " " << elements - i << " Items remaining" << std::endl;
 	}
-	std::cout << "You have entered the following items: ";
+	std::cout << "You have entered the following items: " << std::endl;
 	for (i = 0; i < elements; i++)
-		std::cout << customer._purchaseList[i];
+		std::cout << customer._purchaseList[i] << ", ";
 
 	customer._id = 1;
 	customer._storeName = "Tesco Martins Heron";
-	std::cout << "Please enter your First Name: ";
+	std::cout << std::endl <<  "Please enter your First Name: ";
 	std::cin >> person.name;
 	std::cout << " Please enter your age: ";
 	std::cin >> person.age;
@@ -61,6 +62,9 @@ void printCustomerPurchase(Person person)
 	std::cout << "You bought: " << std::endl;
 	for (int i = 0; i < person.purchase.itemsBought; i++)
 	{
-		std::cout << "+---------------------------------+" << std::endl << "+ " << person.purchase._purchaseList[i] << std::endl;
+		std::cout << "+---------------------------------+" << std::endl
+		<< "+ " << person.purchase._purchaseList[i] << " +"
+		<< std::endl
+		<< "+---------------------------------+"  << std::endl;
 	}
 }
